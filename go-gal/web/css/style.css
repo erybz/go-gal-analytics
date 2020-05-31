@@ -1,0 +1,21 @@
+.table thead th {
+  position: sticky;
+  top: 0;
+  background: white;
+}
+
+.table-wrap {
+  margin: 40px 0;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.chart-wrap {
+  margin: 40px 0;
+}
+
+@media (max-width: 425px) {
+  pre {
+    font-size: 50%;
+  }
+}
