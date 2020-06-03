@@ -10,16 +10,19 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
+// EventHandler is handler for Events
 type EventHandler struct {
 	eventService *service.EventService
 }
 
+// NewEventHandler creates and returns new EventHandler
 func NewEventHandler() *EventHandler {
 	return &EventHandler{
 		eventService: service.NewEventService(),
 	}
 }
 
+// Track accepts analytics request and builds event from it
 func (h *EventHandler) Track(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	if r.Method != http.MethodGet {
 		http.Error(w, "Request method is not GET", http.StatusNotFound)
@@ -39,6 +42,7 @@ func (h *EventHandler) Track(w http.ResponseWriter, r *http.Request, _ httproute
 	w.Write(createPixel())
 }
 
+// Stats retrieves stats for the specified query
 func (h *EventHandler) Stats(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	if r.Method != http.MethodGet {
 		http.Error(w, "Request method is not GET", http.StatusNotFound)
@@ -48,7 +52,9 @@ func (h *EventHandler) Stats(w http.ResponseWriter, r *http.Request, _ httproute
 	urlVals := r.URL.Query()
 	query := urlVals.Get("q")
 
-	stats := h.eventService.Stats(repository.Stats(query))
+	stats := h.eventService.Stats(
+		repository.Stats(query),
+	)
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(stats)

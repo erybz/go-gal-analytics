@@ -7,6 +7,8 @@ $(document).ready(function () {
     loadStats("devicePlatform", "Platform", "#device-platform-table", "#device-platform-chart")
     loadStats("os", "OS", "#device-os-table", "#device-os-chart")
     loadStats("browser", "Browser", "#device-browser-table", "#device-browser-chart")
+    loadStats("language", "Language", "#device-language-table", "#device-language-chart")
+    loadStats("referral", "Referral", "#referral-table", "#referral-chart")
 });
 
 function loadStats(statsName, title, tableID, chartID) {
@@ -54,6 +56,10 @@ function createNewChart(query, queryResponse, elemID) {
     var osData = []
     var browserLabels = []
     var browserData = []
+    var languageLabels = []
+    var languageData = []
+    var referralLabels = []
+    var referralData = []
 
     var backgroundColor = [
         'rgba(54, 162, 235, 0.2)',
@@ -123,6 +129,18 @@ function createNewChart(query, queryResponse, elemID) {
                 browserData.push(queryResponse[k].pageViews)
                 label = browserLabels
                 data = browserData
+                break;
+            case "language":
+                languageLabels.push(queryResponse[k].language)
+                languageData.push(queryResponse[k].pageViews)
+                label = languageLabels
+                data = languageData
+                break;
+            case "referral":
+                referralLabels.push(queryResponse[k].referral)
+                referralData.push(queryResponse[k].pageViews)
+                label = referralLabels
+                data = referralData
                 break;
         }
     }

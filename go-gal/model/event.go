@@ -3,6 +3,7 @@ package model
 type Event struct {
 	Location EventLocation `json:"location"`
 	Device   EventDevice   `json:"device"`
+	Referral string        `json:"referral"`
 }
 
 type EventLocation struct {
@@ -15,6 +16,7 @@ type EventDevice struct {
 	Platform string `json:"platform"`
 	OS       string `json:"os"`
 	Browser  string `json:"browser"`
+	Language string `json:"language"`
 }
 
 func (e *Event) Valid() bool {

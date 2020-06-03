@@ -7,6 +7,7 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
+// Routes initializes the routes
 func Routes() http.Handler {
 	rt := httprouter.New()
 
