@@ -32,6 +32,9 @@ function createNewTable(statsName, response, tableTitle, tableID) {
     $(tableID).append(tableHead)
     var tableBody = "<tbody>"
     for (var k in response) {
+        if (response[k][statsName] == "") {
+            response[k][statsName] = "Unknown"
+        }
         tableBody += "<tr><td>" + response[k][statsName] + "</td><td>" + response[k]["pageViews"] + "</td></tr>"
     }
     tableBody += "</tbody>"
@@ -95,48 +98,72 @@ function createNewChart(query, queryResponse, elemID) {
     for (var k in queryResponse) {
         switch (query) {
             case "country":
+                if (queryResponse[k].country == "") {
+                    queryResponse[k].country = "Unknown"
+                }
                 countryLabels.push(queryResponse[k].country)
                 countryData.push(queryResponse[k].pageViews)
                 label = countryLabels
                 data = countryData
                 break;
             case "city":
+                if (queryResponse[k].city == "") {
+                    queryResponse[k].city = "Unknown"
+                }
                 cityLabels.push(queryResponse[k].city)
                 cityData.push(queryResponse[k].pageViews)
                 label = cityLabels
                 data = cityData
                 break;
             case "deviceType":
+                if (queryResponse[k].deviceType == "") {
+                    queryResponse[k].deviceType = "Unknown"
+                }
                 deviceTypeLabels.push(queryResponse[k].deviceType)
                 deviceTypeData.push(queryResponse[k].pageViews)
                 label = deviceTypeLabels
                 data = deviceTypeData
                 break;
             case "devicePlatform":
+                if (queryResponse[k].devicePlatform == "") {
+                    queryResponse[k].devicePlatform = "Unknown"
+                }
                 devicePlatformLabels.push(queryResponse[k].devicePlatform)
                 devicePlatformData.push(queryResponse[k].pageViews)
                 label = devicePlatformLabels
                 data = devicePlatformData
                 break;
             case "os":
+                if (queryResponse[k].os == "") {
+                    queryResponse[k].os = "Unknown"
+                }
                 osLabels.push(queryResponse[k].os)
                 osData.push(queryResponse[k].pageViews)
                 label = osLabels
                 data = osData
                 break;
             case "browser":
+                if (queryResponse[k].browser == "") {
+                    queryResponse[k].browser = "Unknown"
+                }
                 browserLabels.push(queryResponse[k].browser)
                 browserData.push(queryResponse[k].pageViews)
                 label = browserLabels
                 data = browserData
                 break;
             case "language":
+                if (queryResponse[k].language == "") {
+                    queryResponse[k].language = "Unknown"
+                }
                 languageLabels.push(queryResponse[k].language)
                 languageData.push(queryResponse[k].pageViews)
                 label = languageLabels
                 data = languageData
                 break;
             case "referral":
+                if (queryResponse[k].referral == "") {
+                    queryResponse[k].referral = "Unknown"
+                }
                 referralLabels.push(queryResponse[k].referral)
                 referralData.push(queryResponse[k].pageViews)
                 label = referralLabels
