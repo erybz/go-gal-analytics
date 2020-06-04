@@ -10,6 +10,7 @@ import (
 	"github.com/erybz/go-gal-analytics/go-gal/model"
 	"github.com/erybz/go-gal-analytics/go-gal/repository"
 	"github.com/oschwald/geoip2-golang"
+	"github.com/tomasen/realip"
 	"golang.org/x/text/language"
 )
 
@@ -29,8 +30,7 @@ func NewEventService() *EventService {
 
 // BuildEvent builds a trackable event from the request
 func (ts *EventService) BuildEvent(r *http.Request) (*model.Event, error) {
-	clientIP := net.ParseIP("111.119.248.36")
-	// clientIP := net.ParseIP(realip.FromRequest(r))
+	clientIP := net.ParseIP(realip.FromRequest(r))
 	userAgent := uasurfer.Parse(r.UserAgent())
 	referrerURL, _ := url.Parse(r.Referer())
 	langTags, _, _ := language.ParseAcceptLanguage(r.Header.Get("Accept-Language"))
