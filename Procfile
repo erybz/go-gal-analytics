@@ -1,0 +1,1 @@
+web: ./bin/go-gal-analytics -p $PORT
