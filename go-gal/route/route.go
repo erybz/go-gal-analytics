@@ -15,7 +15,7 @@ func Routes() http.Handler {
 	rt.GET("/knock-knock", eventHandler.Track)
 	rt.GET("/stats", eventHandler.Stats)
 
-	rt.ServeFiles("/go-gal/*filepath", http.Dir("./go-gal/web"))
+	rt.ServeFiles("/dashboard/*filepath", http.Dir("./go-gal/web"))
 
 	return rt
 }

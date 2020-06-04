@@ -1,4 +1,4 @@
-var BASE_API_URL = "http://localhost:80/stats"
+var BASE_API_URL = "https://go-gal.herokuapp.com/stats"
 
 $(document).ready(function () {
     loadStats("country", "Country", "#country-table", "#country-chart")
