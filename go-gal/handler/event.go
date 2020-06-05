@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"github.com/erybz/go-gal-analytics/go-gal/repository"
-	"github.com/erybz/go-gal-analytics/go-gal/service.go"
+	"github.com/erybz/go-gal-analytics/go-gal/service"
 	"github.com/julienschmidt/httprouter"
 )
 
