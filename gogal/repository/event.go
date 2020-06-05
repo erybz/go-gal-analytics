@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"github.com/erybz/go-gal-analytics/go-gal/model"
-	"github.com/erybz/go-gal-analytics/go-gal/utils/counter"
+	"github.com/erybz/go-gal-analytics/gogal/model"
+	"github.com/erybz/go-gal-analytics/gogal/utils/counter"
 )
 
 // Stats are constants for which event stats can be retrieved

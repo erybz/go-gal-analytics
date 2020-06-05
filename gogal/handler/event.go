@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/erybz/go-gal-analytics/go-gal/repository"
-	"github.com/erybz/go-gal-analytics/go-gal/service"
+	"github.com/erybz/go-gal-analytics/gogal/repository"
+	"github.com/erybz/go-gal-analytics/gogal/service"
 	"github.com/julienschmidt/httprouter"
 )
 

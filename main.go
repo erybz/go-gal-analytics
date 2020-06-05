@@ -3,8 +3,8 @@ package main
 import (
 	"flag"
 
-	gogal "github.com/erybz/go-gal-analytics/go-gal"
-	"github.com/erybz/go-gal-analytics/go-gal/route"
+	"github.com/erybz/go-gal-analytics/gogal"
+	"github.com/erybz/go-gal-analytics/gogal/route"
 )
 
 func main() {

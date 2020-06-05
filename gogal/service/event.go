@@ -7,8 +7,8 @@ import (
 	"net/url"
 
 	"github.com/avct/uasurfer"
-	"github.com/erybz/go-gal-analytics/go-gal/model"
-	"github.com/erybz/go-gal-analytics/go-gal/repository"
+	"github.com/erybz/go-gal-analytics/gogal/model"
+	"github.com/erybz/go-gal-analytics/gogal/repository"
 	"github.com/oschwald/geoip2-golang"
 	"github.com/tomasen/realip"
 	"golang.org/x/text/language"
@@ -24,7 +24,7 @@ type EventService struct {
 func NewEventService() *EventService {
 	return &EventService{
 		eventRepo:   repository.NewEventRepository(),
-		geoIPReader: initGeoIPReader("go-gal/assets/GeoLite2-City.mmdb"),
+		geoIPReader: initGeoIPReader("gogal/assets/GeoLite2-City.mmdb"),
 	}
 }
 
